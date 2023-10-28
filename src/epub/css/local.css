@@ -1,18 +1,8 @@
 @charset "utf-8";
 @namespace epub "http://www.idpf.org/2007/ops";
+@namespace xml "http://www.w3.org/XML/1998/namespace";
 
-header{
-	font-variant: small-caps;
-	margin: 1em;
-	text-align: center;
-}
-
-footer{
-	margin-top: 1em;
-	text-align: right;
-}
-
-/* Hymn, poem, verse */
+header,
 [epub|type~="z3998:poem"] header p,
 [epub|type~="z3998:verse"] header p{
 	font-variant: small-caps;
@@ -20,11 +10,21 @@ footer{
 	text-align: center;
 }
 
+footer,
 [epub|type~="z3998:poem"] footer p{
 	margin-top: 1em;
 	text-align: right;
 }
 
+abbr[epub|type~="se:era"]{
+	font-variant: all-small-caps;
+}
+
+blockquote[xml|lang]{
+	font-style: italic;
+}
+
+/* Hymn, poem, verse */
 [epub|type~="z3998:hymn"] p,
 [epub|type~="z3998:poem"] p,
 [epub|type~="z3998:verse"] p{
@@ -57,7 +57,7 @@ footer{
 	border-radius: 12px;
 	border-right: 2px solid;
 	display: inline-block;
-	padding: 0 .25em 0 .25em;
+	padding: 0 .5em 0 .5em;
 	text-indent: 0;
 	vertical-align: middle;
 }
